@@ -1,0 +1,203 @@
+/* style.css - Premium dark theme with teal/cyan gradient and glassmorphism */
+
+/* Global resets and typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+    color: #e0e0e0;
+}
+body {
+    background: linear-gradient(135deg, #0a2744 0%, #006d77 100%); /* dark teal gradient */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #003647, #005d7f);
+    padding: 120px 20px;
+    text-align: center;
+    position: relative;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1523580846021-00a0a89a2c3d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    opacity: 0.15;
+    z-index: 0;
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #00c9ff, #92fe9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 1.2s ease-out;
+}
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+    opacity: 0.9;
+    animation: fadeIn 1.5s ease-out;
+}
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(45deg, #00c9ff, #92fe9d);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+}
+
+/* Services Section */
+.services {
+    padding: 80px 20px;
+    background: rgba(10, 20, 30, 0.85);
+    text-align: center;
+}
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #00e5ff;
+    position: relative;
+}
+.services h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #00e5ff;
+    margin: 0.5rem auto 0;
+}
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.service-card {
+    background: rgba(255,255,255,0.07);
+    border-radius: 12px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+}
+.service-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+    fill: #00e5ff;
+    transition: transform 0.4s;
+}
+.service-card:hover .service-icon {
+    transform: rotate(15deg);
+}
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #e0f7fa;
+}
+.service-card p {
+    font-size: 1rem;
+    opacity: 0.85;
+}
+
+/* Footer */
+footer {
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* About Section */
+.about {
+    background: rgba(15, 30, 45, 0.88);
+    color: #e0f7fa;
+    padding: 80px 20px;
+    text-align: center;
+}
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #00e5ff;
+}
+.about .summary {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    line-height: 1.5;
+    opacity: 0.95;
+}
+.about h3 {
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
+    color: #00c9ff;
+}
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: left;
+    line-height: 1.6;
+    color: #cfe8f3;
+}
+.skills-list li {
+    margin-bottom: 0.5rem;
+}
+.contact-info a {
+    color: #a0e7ff;
+    text-decoration: underline;
+}
+.contact-info a:hover {
+    color: #fff;
+}
+
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .hero { padding: 80px 15px; }
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 1rem; }
+}
